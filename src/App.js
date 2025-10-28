@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import myLogo from './assets/bunny1.png';
+import './Custom.css';
+import Greeting from './Greeting';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello, Gorby!</h1>
+      <img src={myLogo} alt="Logo" width="150" />
+      <Greeting name="Gorby" />
     </div>
   );
 }
