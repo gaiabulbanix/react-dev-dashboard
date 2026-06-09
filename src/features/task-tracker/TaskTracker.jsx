@@ -1,7 +1,9 @@
+import Panel from "../../components/Panel";
+
 export default function TaskTracker() {
     return (
-        <div>
+        <Panel>
             <h2>Task Tracker</h2>
-        </div>
+        </Panel>
     );
 };

@@ -1,7 +1,9 @@
+import Panel from "../../components/Panel";
+
 export default function WorkoutTracker() {
     return (
-        <div>
+        <Panel>
             <h2>Workout Tracker</h2>
-        </div>
+        </Panel>
     );
 };

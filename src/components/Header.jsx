@@ -1,7 +1,9 @@
+import Panel from "./Panel";
+
 export default function Header() {
     return (
-        <div>
+        <Panel>
             <h1>Development Dashboard</h1>
-        </div>
+        </Panel>
     );
 };
