@@ -3,5 +3,5 @@ export default function Panel({ className = '', children, }) {
         <div className={`${className}`}>
             {children}
         </div>
-    )
-}
+    );
+};

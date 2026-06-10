@@ -2,6 +2,8 @@ import Header from "./Header";
 import TaskTracker from "../features/task-tracker/TaskTracker";
 import WorkoutTracker from "../features/workout-tracker/WorkoutTracker";
 
+import { useState } from 'react';
+
 // **Color Scheme**
 // -dark mode: bg-slate-900 text-slate-100
 // -dark mode accent: border-teal-800
@@ -12,6 +14,8 @@ import WorkoutTracker from "../features/workout-tracker/WorkoutTracker";
 // *use slightly lower/higher values where needed for contrast (200)
 
 export default function Dashboard() {
+    const [activeFeature, setActiveFeature] = useState('taskTracker');
+
     return (
         <div className="p-8 min-h-screen bg-slate-900 text-slate-100">
             <Header />
