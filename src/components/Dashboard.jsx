@@ -19,8 +19,8 @@ export default function Dashboard() {
     return (
         <div className="p-8 min-h-screen bg-slate-900 text-slate-100">
             <Header />
-            <TaskTracker />
-            <WorkoutTracker />
+            {activeFeature === 'taskTracker' && <TaskTracker />}
+            {activeFeature === 'workoutTracker' && <WorkoutTracker />}
         </div>
     );
 };
