@@ -1,19 +1,18 @@
-import Panel from "./Panel";
 import Button from "./Button";
 
 export default function Navigation({ onFeatureChange }) {
     return (
         <div className="flex gap-4">
-            <button
+            <Button
                 onClick={() => onFeatureChange('taskTracker')}
             >
                 Tasks
-            </button>
-            <button
+            </Button>
+            <Button
                 onClick={() => onFeatureChange('workoutTracker')}
             >
                 Workouts
-            </button>
+            </Button>
         </div>
     );
 };
