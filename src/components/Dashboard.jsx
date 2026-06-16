@@ -9,7 +9,9 @@ export default function Dashboard() {
     const [activeFeature, setActiveFeature] = useState('taskTracker');
 
     // **handlers**
-    const handleFeatureChange = (feature) => setActiveFeature(feature);
+    const handleFeatureChange = (feature) => {
+        setActiveFeature(feature);
+    };
 
     return (
         <div className="p-10 min-h-screen bg-slate-900 text-slate-100">
