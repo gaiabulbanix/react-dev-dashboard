@@ -1,6 +1,6 @@
 import Header from "./Header";
 import TaskTracker from "../features/task-tracker/TaskTracker";
-import WorkoutTracker from "../features/workout-tracker/WorkoutTracker";
+import FitnessTracker from "../features/fitness-tracker/FitnessTracker";
 
 import { useState } from 'react';
 
@@ -9,17 +9,15 @@ export default function Dashboard() {
     const [activeFeature, setActiveFeature] = useState('taskTracker');
 
     // **handlers**
-    const handleFeatureChange = (feature) => {
-        setActiveFeature(feature);
-    }
+    const handleFeatureChange = (feature) => setActiveFeature(feature);
 
     return (
-        <div className="p-8 min-h-screen bg-slate-900 text-slate-100">
+        <div className="p-10 min-h-screen bg-slate-900 text-slate-100">
             <Header
                 onFeatureChange={handleFeatureChange}
             />
-            {activeFeature === 'taskTracker' && <TaskTracker />}
-            {activeFeature === 'workoutTracker' && <WorkoutTracker />}
+            {activeFeature === 'taskTracker' && <TaskTracker className="mt-4" />}
+            {activeFeature === 'fitnessTracker' && <FitnessTracker className="mt-4" />}
         </div>
     );
 };

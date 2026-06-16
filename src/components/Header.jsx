@@ -3,11 +3,9 @@ import Navigation from "./Navigation";
 
 export default function Header({ onFeatureChange }) {
     return (
-        <Panel className="flex gap-10">
+        <Panel className="flex gap-8">
             <h1>Development Dashboard</h1>
-            <Navigation
-                onFeatureChange={onFeatureChange}
-            />
+            <Navigation onFeatureChange={onFeatureChange} />
         </Panel>
     );
 };
