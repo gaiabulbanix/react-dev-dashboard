@@ -1,6 +1,6 @@
-import Header from "./Header";
-import TaskTracker from "../features/task-tracker/TaskTracker";
-import FitnessTracker from "../features/fitness-tracker/FitnessTracker";
+import Header from './Header';
+import TaskTracker from '../features/task-tracker/TaskTracker';
+import FitnessTracker from '../features/fitness-tracker/FitnessTracker';
 
 import { useState } from 'react';
 
