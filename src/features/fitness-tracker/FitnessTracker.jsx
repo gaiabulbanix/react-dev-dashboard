@@ -1,9 +1,9 @@
 import Panel from "../../components/Panel";
 
-export default function TaskTracker({ className = '', }) {
+export default function FitnessTracker({ className = '', }) {
     return (
         <Panel className={`${className}`}>
-            <h2>Task Tracker</h2>
+            <h2>Fitness Tracker</h2>
         </Panel>
     );
 };
