@@ -1,5 +1,6 @@
 import TaskForm from './TaskForm';
 import TaskFilter from './TaskFilter';
+import TaskList from './TaskList';
 import Panel from '../../components/Panel';
 
 export default function TaskTracker({ className = '', }) {
@@ -11,7 +12,7 @@ export default function TaskTracker({ className = '', }) {
                 <TaskFilter />
             </div>
             <div>
-                TaskList and TaskItems
+                <TaskList />
             </div>
         </Panel>
     );
