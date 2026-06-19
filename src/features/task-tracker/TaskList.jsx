@@ -1,8 +1,8 @@
 import TaskItem from "./TaskItem";
 
-export default function TaskList() {
+export default function TaskList({ className = '' }) {
     return (
-        <ul>
+        <ul className={`${className}`}>
             <TaskItem />
         </ul>
     );

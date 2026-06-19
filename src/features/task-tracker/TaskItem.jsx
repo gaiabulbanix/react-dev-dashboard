@@ -1,6 +1,6 @@
-export default function TaskItem() {
+export default function TaskItem({ className = '' }) {
     return (
-        <li>
+        <li className={`${className}`}>
 
         </li>
     );
