@@ -7,7 +7,10 @@ export default function TaskForm({ className = '', onAddTask }) {
     return (
         <form
             className={`${className}`}
-            onSubmit={() => onAddTask(taskInput)}>
+            onSubmit={(e) => {
+                e.preventDefault();
+                onAddTask(taskInput)
+            }}>
             <input
                 type="text"
                 value={taskInput}
