@@ -11,9 +11,9 @@ export default function TaskTracker({ className = '', }) {
 
     // **handlers**
     const handleAddTask = (taskInput) => {
-        setTaskList({
+        setTaskList([...taskList, {
             task: taskInput
-        });
+        }]);
     };
 
     return (
