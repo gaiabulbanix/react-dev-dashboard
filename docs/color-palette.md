@@ -7,4 +7,4 @@
 - secondary: 'bg-slate-900 text-slate-100',
 - danger: 'bg-red-500 text-slate-900 font-bold',
 
-\*use slightly lower/higher values where needed for contrast (200)
+*use slightly lower/higher values where needed for contrast (200 units difference)
