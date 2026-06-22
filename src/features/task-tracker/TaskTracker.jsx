@@ -10,12 +10,19 @@ export default function TaskTracker({ className = '', }) {
     const [taskList, setTaskList] = useState([]);
 
     // **handlers**
-    const handleAddTask = (taskInput) => {
+    const handleAddTask = (taskInput) =>
         setTaskList([...taskList, {
-            task: taskInput,
+            id: crypto.randomUUID(),
+            name: taskInput,
             complete: false
         }]);
-    };
+
+    const handleToggleTask = (targetTask) =>
+        setTaskList(taskList.map((task) =>
+            task.id === targetTask.id
+                ? { ...task, complete: !task.complete }
+                : task
+        ));
 
     return (
         <Panel className={`${className}`}>
@@ -29,6 +36,7 @@ export default function TaskTracker({ className = '', }) {
             <div>
                 <TaskList
                     taskList={taskList}
+                    onToggleTask={handleToggleTask}
                 />
             </div>
         </Panel>
