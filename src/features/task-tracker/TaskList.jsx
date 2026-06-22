@@ -1,15 +1,16 @@
 import TaskItem from "./TaskItem";
 
-export default function TaskList({ className = '', taskList, }) {
+export default function TaskList({ className = '', taskList, onToggleTask }) {
     return (
         <ul className={`${className}`}>
-            {taskList.map((taskItem, index) => (
+            {taskList.map((task, index) =>
                 <TaskItem
-                    key={index}
+                    key={task.id}
                     index={index}
-                    taskItem={taskItem}
+                    task={task}
+                    onToggleTask={onToggleTask}
                 />
-            ))}
+            )}
         </ul>
     );
 }
