@@ -9,7 +9,8 @@ export default function TaskForm({ className = '', onAddTask }) {
             className={`${className}`}
             onSubmit={(e) => {
                 e.preventDefault();
-                onAddTask(taskInput)
+                onAddTask(taskInput);
+                setTaskInput('');
             }}>
             <input
                 type="text"

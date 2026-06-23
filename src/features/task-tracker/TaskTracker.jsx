@@ -10,12 +10,14 @@ export default function TaskTracker({ className = '', }) {
     const [taskList, setTaskList] = useState([]);
 
     // **handlers**
-    const handleAddTask = (taskInput) =>
+    const handleAddTask = (taskInput) => {
+        if (!taskInput.trim()) return;
         setTaskList([...taskList, {
             id: crypto.randomUUID(),
             name: taskInput,
             complete: false
         }]);
+    };
 
     const handleToggleTask = (targetTask) =>
         setTaskList(taskList.map((task) =>
