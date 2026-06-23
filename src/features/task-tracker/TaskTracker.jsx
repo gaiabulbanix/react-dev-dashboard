@@ -2,6 +2,7 @@ import TaskForm from './TaskForm';
 import TaskFilter from './TaskFilter';
 import TaskList from './TaskList';
 import Panel from '../../components/Panel';
+import Button from '../../components/Button';
 
 import { useState } from 'react';
 
@@ -31,6 +32,8 @@ export default function TaskTracker({ className = '', }) {
             task.id !== targetTask.id
         ));
 
+    const handleDeleteAllTasks = () => setTaskList([]);
+
     return (
         <Panel className={`${className}`}>
             <h2>Task Tracker</h2>
@@ -46,6 +49,12 @@ export default function TaskTracker({ className = '', }) {
                     onToggleTask={handleToggleTask}
                     onDeleteTask={handleDeleteTask}
                 />
+                <Button
+                    type="Button"
+                    onClick={handleDeleteAllTasks}
+                >
+                    Delete All Tasks
+                </Button>
             </div>
         </Panel>
     );
