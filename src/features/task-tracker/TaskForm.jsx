@@ -1,5 +1,7 @@
-import { useState } from "react";
-import Button from "../../components/Button";
+import Button from '../../components/Button';
+
+import { useState } from 'react';
+
 export default function TaskForm({ className = '', onAddTask }) {
     // **hooks**
     const [taskInput, setTaskInput] = useState('');
@@ -11,7 +13,8 @@ export default function TaskForm({ className = '', onAddTask }) {
                 e.preventDefault();
                 onAddTask(taskInput);
                 setTaskInput('');
-            }}>
+            }}
+        >
             <input
                 type="text"
                 value={taskInput}

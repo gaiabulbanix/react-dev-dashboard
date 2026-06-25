@@ -34,6 +34,13 @@ export default function TaskTracker({ className = '', }) {
 
     const handleDeleteAllTasks = () => setTaskList([]);
 
+    const handleEditTask = (targetTask, taskInput) =>
+        setTaskList(taskList.map((task) =>
+            task.id === targetTask.id
+                ? { id: task.id, name: taskInput, complete: task.complete }
+                : task
+        ));
+
     return (
         <Panel className={`${className}`}>
             <h2>Task Tracker</h2>
@@ -48,6 +55,7 @@ export default function TaskTracker({ className = '', }) {
                     taskList={taskList}
                     onToggleTask={handleToggleTask}
                     onDeleteTask={handleDeleteTask}
+                    onEditTask={handleEditTask}
                 />
                 <Button
                     type="Button"
