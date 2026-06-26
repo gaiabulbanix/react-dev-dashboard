@@ -1,15 +1,24 @@
 import Button from '../../components/Button';
 
-export default function TaskFilter({ className = '' }) {
+export default function TaskFilter({ className = '', onFilterTasks }) {
     return (
         <div className={`flex gap-4 ${className}`}>
-            <Button>
+            <Button
+                type="button"
+                onClick={() => onFilterTasks('all')}
+            >
                 All
             </Button>
-            <Button>
+            <Button
+                type="button"
+                onClick={() => onFilterTasks('complete')}
+            >
                 Completed
             </Button>
-            <Button>
+            <Button
+                type="button"
+                onClick={() => onFilterTasks('pending')}
+            >
                 Pending
             </Button>
         </div>
