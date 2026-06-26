@@ -9,6 +9,7 @@ import { useState } from 'react';
 export default function TaskTracker({ className = '', }) {
     // **hooks**
     const [taskList, setTaskList] = useState([]);
+    const [taskFilter, setTaskFilter] = useState('all')
 
     // **handlers**
     const handleAddTask = (taskInput) => {
@@ -37,9 +38,13 @@ export default function TaskTracker({ className = '', }) {
     const handleEditTask = (targetTask, taskInput) =>
         setTaskList(taskList.map((task) =>
             task.id === targetTask.id
-                ? { id: task.id, name: taskInput, complete: task.complete }
+                ? { ...task, name: taskInput }
                 : task
         ));
+
+    const handleFilterTasks = (filter) => {
+        setTaskFilter(filter);
+    };
 
     return (
         <Panel className={`${className}`}>
@@ -48,11 +53,14 @@ export default function TaskTracker({ className = '', }) {
                 <TaskForm
                     onAddTask={handleAddTask}
                 />
-                <TaskFilter />
+                <TaskFilter
+                    onFilterTasks={handleFilterTasks}
+                />
             </div>
             <div>
                 <TaskList
                     taskList={taskList}
+                    taskFilter={taskFilter}
                     onToggleTask={handleToggleTask}
                     onDeleteTask={handleDeleteTask}
                     onEditTask={handleEditTask}
