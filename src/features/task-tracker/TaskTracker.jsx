@@ -46,6 +46,8 @@ export default function TaskTracker({ className = '', }) {
         setTaskFilter(filter);
     };
 
+    const handleClearCompleted = () => setTaskList(taskList.filter((task) => !task.complete));
+
     return (
         <Panel className={`${className}`}>
             <h2>Task Tracker</h2>
@@ -65,12 +67,21 @@ export default function TaskTracker({ className = '', }) {
                     onDeleteTask={handleDeleteTask}
                     onEditTask={handleEditTask}
                 />
-                <Button
-                    type="Button"
-                    onClick={handleDeleteAllTasks}
-                >
-                    Delete All Tasks
-                </Button>
+                <div>
+                    <Button
+                        type="Button"
+                        onClick={handleDeleteAllTasks}
+                    >
+                        Delete All Tasks
+                    </Button>
+                    <Button
+                        type="Button"
+                        onClick={handleClearCompleted}
+                    >
+                        Clear All Completed
+                    </Button>
+                </div>
+
             </div>
         </Panel>
     );
