@@ -8,7 +8,9 @@ import { useState } from 'react';
 
 export default function TaskTracker({ className = '', }) {
     // **hooks**
-    const [taskList, setTaskList] = useState([]);
+    const [taskList, setTaskList] = useState(() => {
+        return;
+    });
     const [taskFilter, setTaskFilter] = useState('all')
 
     // **handlers**
