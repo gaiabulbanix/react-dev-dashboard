@@ -4,13 +4,27 @@ import TaskList from './TaskList';
 import Panel from '../../components/Panel';
 import Button from '../../components/Button';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function TaskTracker({ className = '', }) {
     // **hooks**
     const [taskList, setTaskList] = useState(() => {
-        return;
+        const raw = localStorage.getItem('savedTasks');
+        if (!raw) return [];
+
+        try {
+            const parsed = JSON.parse(raw);
+            return Array.isArray(parsed) ? parsed : [];
+        } catch {
+            console.warn("Invalid JSON in localStorage (savedTasks)");
+            return [];
+        };
     });
+
+    useEffect(() => {
+        localStorage.setItem('savedTasks', JSON.stringify(taskList));
+    }, [taskList])
+
     const [taskFilter, setTaskFilter] = useState('all')
 
     // **handlers**
