@@ -51,12 +51,14 @@ export default function TaskTracker({ className = '', }) {
 
     const handleDeleteAllTasks = () => setTaskList([]);
 
-    const handleEditTask = (targetTask, taskInput) =>
+    const handleEditTask = (targetTask, taskInput) => {
+        if (!taskInput.trim()) return;
         setTaskList(taskList.map((task) =>
             task.id === targetTask.id
-                ? { ...task, name: taskInput }
+                ? { ...task, name: taskInput.trim() }
                 : task
         ));
+    };
 
     const handleFilterTasks = (filter) => {
         setTaskFilter(filter);
