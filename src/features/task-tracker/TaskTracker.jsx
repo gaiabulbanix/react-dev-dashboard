@@ -99,7 +99,6 @@ export default function TaskTracker({ className = '', }) {
                         Clear All Completed
                     </Button>
                 </div>
-
             </div>
         </Panel>
     );
