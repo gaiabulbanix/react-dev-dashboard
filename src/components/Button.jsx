@@ -7,6 +7,8 @@ export default function Button({ className = '', onClick, children }) {
         success: 'bg-green-500 text-slate-900 hover:bg-green-600'
     };
 
+    const resolvedStyle = disabled ? 'disabled' : buttonStyle;
+
     return (
         <button className={`${className}`} onClick={onClick}>
             {children}
