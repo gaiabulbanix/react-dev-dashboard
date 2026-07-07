@@ -87,13 +87,15 @@ export default function TaskTracker({ className = '', }) {
                 />
                 <div>
                     <Button
-                        type="Button"
+                        type="button"
                         onClick={handleDeleteAllTasks}
+                        btnStyle="secondary"
+                        btnSize="md"
                     >
                         Delete All Tasks
                     </Button>
                     <Button
-                        type="Button"
+                        type="button"
                         onClick={handleClearCompleted}
                     >
                         Clear All Completed
