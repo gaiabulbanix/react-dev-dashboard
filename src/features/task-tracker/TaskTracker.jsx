@@ -67,7 +67,7 @@ export default function TaskTracker({ className = '', }) {
     const handleClearCompleted = () => setTaskList(taskList.filter((task) => !task.complete));
 
     return (
-        <Panel className={`${className}`}>
+        <Panel>
             <h2>Task Tracker</h2>
             <div className="flex gap-2">
                 <TaskForm
@@ -102,6 +102,6 @@ export default function TaskTracker({ className = '', }) {
                     </Button>
                 </div>
             </div>
-        </Panel>
+        </Panel >
     );
 }
