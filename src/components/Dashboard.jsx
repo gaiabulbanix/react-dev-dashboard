@@ -25,7 +25,7 @@ export default function Dashboard() {
     return (
         <div className="min-h-screen bg-slate-900 text-slate-100">
             <Header onFeatureChange={handleFeatureChange} />
-            <main className="p-10">
+            <main className="p-8">
                 {activeFeature === 'taskTracker' && <TaskTracker className="max-w-3xl" />}
                 {activeFeature === 'fitnessTracker' && <FitnessTracker className="max-w-3xl" />}
             </main>
