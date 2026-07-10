@@ -6,7 +6,7 @@ import Button from '../../components/Button';
 
 import { useState, useEffect } from 'react';
 
-export default function TaskTracker({ className = '', }) {
+export default function TaskTracker() {
     // **hooks**
     const [taskList, setTaskList] = useState(() => {
         const raw = localStorage.getItem('savedTasks');
@@ -67,7 +67,7 @@ export default function TaskTracker({ className = '', }) {
     const handleClearCompleted = () => setTaskList(taskList.filter((task) => !task.complete));
 
     return (
-        <Panel className={className}>
+        <Panel className="max-w-3xl">
             <h2>Task Tracker</h2>
             <div className="flex gap-2">
                 <TaskForm
