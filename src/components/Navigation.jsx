@@ -1,19 +1,19 @@
 import Button from './Button';
 
-export default function Navigation({ onFeatureChange }) {
+export default function Navigation({ onFeatureChange, activeFeature }) {
     return (
         <div className="flex gap-2">
             <Button
                 onClick={() => onFeatureChange('taskTracker')}
-                btnStyle="secondary"
-                btnSize="sm"
+                btnStyle={activeFeature === 'taskTracker' ? 'secondary' : 'primary'}
+                btnSize="md"
             >
                 Tasks
             </Button>
             <Button
                 onClick={() => onFeatureChange('fitnessTracker')}
-                btnStyle="secondary"
-                btnSize="sm"
+                btnStyle={activeFeature === 'fitnessTracker' ? 'secondary' : 'primary'}
+                btnSize="md"
             >
                 Fitness
             </Button>
