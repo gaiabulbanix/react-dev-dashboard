@@ -69,15 +69,16 @@ export default function TaskTracker() {
     return (
         <Panel className="max-w-3xl">
             <h2>Task Tracker</h2>
-            <div className="flex gap-2">
+            <div className="flex gap-4 mt-2">
                 <TaskForm
                     onAddTask={handleAddTask}
                 />
                 <TaskFilter
                     onFilterTasks={handleFilterTasks}
+                    taskFilter={taskFilter}
                 />
             </div>
-            <div>
+            <div className="mt-4">
                 <TaskList
                     taskList={taskList}
                     taskFilter={taskFilter}
@@ -85,22 +86,24 @@ export default function TaskTracker() {
                     onDeleteTask={handleDeleteTask}
                     onEditTask={handleEditTask}
                 />
-                <div>
-                    <Button
-                        type="button"
-                        onClick={handleDeleteAllTasks}
-                        btnStyle="secondary"
-                        btnSize="md"
-                    >
-                        Delete All Tasks
-                    </Button>
-                    <Button
-                        type="button"
-                        onClick={handleClearCompleted}
-                    >
-                        Clear All Completed
-                    </Button>
-                </div>
+            </div>
+            <div className="flex justify-end gap-1 mt-4">
+                <Button
+                    type="button"
+                    onClick={handleDeleteAllTasks}
+                    btnStyle="danger"
+                    btnSize="md"
+                >
+                    Delete All Tasks
+                </Button>
+                <Button
+                    type="button"
+                    onClick={handleClearCompleted}
+                    btnStyle="success"
+                    btnSize="md"
+                >
+                    Clear All Completed
+                </Button>
             </div>
         </Panel >
     );

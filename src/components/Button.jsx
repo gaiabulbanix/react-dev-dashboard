@@ -1,10 +1,10 @@
-export default function Button({ className = '', onClick, children, btnStyle = "primary", btnSize = "md", disabled = false }) {
+export default function Button({ className = '', onClick, children, btnStyle = 'primary', btnSize = 'md', disabled = false }) {
     const btnStyles = {
-        primary: 'bg-slate-100 text-slate-900 hover:bg-slate-400',
+        primary: 'bg-slate-100 text-slate-900 hover:bg-slate-200',
         secondary: 'bg-slate-900 text-slate-100 hover:bg-slate-800',
-        disabled: 'bg-slate-400 text-slate-900 cursor-not-allowed opacity-50',
-        danger: 'bg-red-500 text-slate-900 font-bold hover:bg-red-700',
-        success: 'bg-green-500 text-slate-900 hover:bg-green-600'
+        disabled: 'bg-slate-500 text-slate-900 cursor-not-allowed opacity-50',
+        danger: 'bg-red-500 text-slate-900 font-bold hover:bg-red-400',
+        success: 'bg-green-500 text-slate-900 hover:bg-green-400'
     };
 
     const btnSizes = {
