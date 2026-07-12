@@ -93,6 +93,7 @@ export default function TaskTracker() {
                     onClick={handleDeleteAllTasks}
                     btnStyle="danger"
                     btnSize="md"
+                    disabled={taskList.length <= 0}
                 >
                     Delete All Tasks
                 </Button>
@@ -101,6 +102,7 @@ export default function TaskTracker() {
                     onClick={handleClearCompleted}
                     btnStyle="success"
                     btnSize="md"
+                    disabled={taskList.filter((task) => task.complete).length <= 0}
                 >
                     Clear All Completed
                 </Button>
