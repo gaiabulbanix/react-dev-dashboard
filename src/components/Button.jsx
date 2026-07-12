@@ -16,7 +16,7 @@ export default function Button({ className = '', onClick, children, btnStyle = '
     const setStyle = disabled ? 'disabled' : btnStyle;
 
     return (
-        <button className={`${btnStyles[btnStyle]} ${btnSizes[btnSize]} rounded-md font-medium ${className}`} onClick={onClick}>
+        <button className={`${btnStyles[setStyle]} ${btnSizes[btnSize]} rounded-md font-medium ${className}`} onClick={onClick}>
             {children}
         </button>
     );

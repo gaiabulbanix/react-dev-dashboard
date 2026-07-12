@@ -27,6 +27,7 @@ export default function TaskForm({ onAddTask }) {
                 type="submit"
                 btnSize="sm"
                 btnStyle="secondary"
+                disabled={!taskInput.trim()}
             >
                 Add
             </Button>

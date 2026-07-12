@@ -11,16 +11,21 @@ export default function TaskList({ className = '', taskList, onToggleTask, onDel
 
     return (
         <ul className={`${className}`}>
-            {filteredTasks.map((task, index) =>
-                <TaskItem
-                    key={task.id}
-                    index={index}
-                    task={task}
-                    onToggleTask={onToggleTask}
-                    onDeleteTask={onDeleteTask}
-                    onEditTask={onEditTask}
-                />
-            )}
+            {filteredTasks.length
+                ? filteredTasks.map((task, index) =>
+                    <TaskItem
+                        key={task.id}
+                        index={index}
+                        task={task}
+                        onToggleTask={onToggleTask}
+                        onDeleteTask={onDeleteTask}
+                        onEditTask={onEditTask}
+                    />
+                )
+                : taskFilter === 'all'
+                    ? 'No tasks added yet - add one now!'
+                    : 'No tasks match this filter currently...'
+            }
         </ul>
     );
 }
