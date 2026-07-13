@@ -1,4 +1,4 @@
-export default function Button({ className = '', onClick, children, btnStyle = 'primary', btnSize = 'md', disabled = false }) {
+export default function Button({ onClick, children, btnStyle = 'primary', btnSize = 'md', disabled = false }) {
     const btnStyles = {
         primary: 'bg-slate-100 text-slate-900 hover:bg-slate-200',
         secondary: 'bg-slate-900 text-slate-100 hover:bg-slate-800',
@@ -16,7 +16,7 @@ export default function Button({ className = '', onClick, children, btnStyle = '
     const setStyle = disabled ? 'disabled' : btnStyle;
 
     return (
-        <button className={`${btnStyles[setStyle]} ${btnSizes[btnSize]} rounded-md font-medium ${className}`} onClick={onClick}>
+        <button className={`${btnStyles[setStyle]} ${btnSizes[btnSize]} rounded-md font-medium`} onClick={onClick}>
             {children}
         </button>
     );
