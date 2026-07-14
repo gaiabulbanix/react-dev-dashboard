@@ -57,10 +57,13 @@ export default function TaskItem({ task, index, onToggleTask, onDeleteTask, onEd
                         </div>
                         <div className={task.complete ? 'text-green-500 line-through' : 'text-slate-100'}
                         >
-                            {task.name} - {task.date}
+                            {task.name}
                         </div>
                     </div>
-                    <div className="flex gap-1">
+                    <div className="flex gap-1 items-center">
+                        <div className="text-slate-400 mr-1">
+                            {task.date}
+                        </div>
                         <Button
                             type="button"
                             onClick={() => {
