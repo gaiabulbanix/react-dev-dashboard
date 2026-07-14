@@ -33,7 +33,8 @@ export default function TaskTracker() {
         setTaskList([...taskList, {
             id: crypto.randomUUID(),
             name: taskInput,
-            complete: false
+            complete: false,
+            date: dateNow
         }]);
     };
 
@@ -44,12 +45,22 @@ export default function TaskTracker() {
                 : task
         ));
 
-    const handleDeleteTask = (targetTask) =>
+    const handleDeleteTask = (targetTask) => {
+        if (!window.confirm("Are you sure you want to delete this task?")) {
+            return;
+        };
         setTaskList(taskList.filter((task) =>
             task.id !== targetTask.id
         ));
+    };
 
-    const handleDeleteAllTasks = () => setTaskList([]);
+
+    const handleDeleteAllTasks = () => {
+        if (!window.confirm("Are you sure you want to delete all tasks?")) {
+            return;
+        };
+        setTaskList([]);
+    };
 
     const handleEditTask = (targetTask, taskInput) => {
         if (!taskInput.trim()) return;
@@ -64,12 +75,20 @@ export default function TaskTracker() {
         setTaskFilter(filter);
     };
 
-    const handleClearCompleted = () => setTaskList(taskList.filter((task) => !task.complete));
+    const handleClearCompleted = () => {
+        if (!window.confirm("Are you sure you want to clear all completed tasks?")) {
+            return;
+        };
+        setTaskList(taskList.filter((task) => !task.complete));
+    }
+
+    // **derived values**
+    const dateNow = new Date().toLocaleString();
 
     return (
         <Panel className="max-w-3xl">
             <h2>Task Tracker</h2>
-            <div className="flex gap-4 mt-2">
+            <div className="flex justify-between mt-2">
                 <TaskForm
                     onAddTask={handleAddTask}
                 />
