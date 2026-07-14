@@ -83,7 +83,13 @@ export default function TaskTracker() {
     }
 
     // **derived values**
-    const dateNow = new Date().toLocaleString();
+    const dateNow = new Date().toLocaleString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+    });
 
     return (
         <Panel className="max-w-3xl">
