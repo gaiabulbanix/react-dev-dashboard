@@ -23,9 +23,9 @@ export default function TaskTracker() {
 
     useEffect(() => {
         localStorage.setItem('savedTasks', JSON.stringify(taskList));
-    }, [taskList])
+    }, [taskList]);
 
-    const [taskFilter, setTaskFilter] = useState('all')
+    const [taskFilter, setTaskFilter] = useState('all');
 
     // **handlers**
     const handleAddTask = (taskInput) => {
