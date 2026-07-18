@@ -23,10 +23,32 @@ export default function FitnessTracker() {
         localStorage.setItem('savedWorkouts', JSON.stringify(workoutList));
     }, [workoutList]);
 
+    // **handlers**
+    const handleAddWorkout = (workoutInputName, workoutInputReps) => {
+        if (!workoutInputName.trim()) return;
+        setWorkoutList([...workoutList, {
+            id: crypto.randomUUID,
+            name: workoutInputName,
+            reps: workoutInputReps,
+            date: dateNow
+        }]);
+    };
+
+    // **derived**
+    const dateNow = new Date().toLocaleString(undefined, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+    });
+
     return (
         <Panel className="max-w-3xl">
             <h2>Fitness Tracker</h2>
-            <WorkoutForm />
+            <WorkoutForm
+                onAddWorkout={handleAddWorkout}
+            />
             <WorkoutList />
         </Panel>
     );
