@@ -5,6 +5,9 @@ import WorkoutList from './WorkoutList';
 import { useState } from 'react';
 
 export default function FitnessTracker() {
+    // **hooks**
+    const [workoutList, setWorkList] = useState('');
+
     return (
         <Panel className="max-w-3xl">
             <h2>Fitness Tracker</h2>
