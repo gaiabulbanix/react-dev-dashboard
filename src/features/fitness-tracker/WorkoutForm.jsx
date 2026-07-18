@@ -1,14 +1,19 @@
 import Button from '../../components/Button'
 import { useState } from 'react';
 
-export default function WorkoutForm(onAddWorkout) {
+export default function WorkoutForm({ onAddWorkout }) {
     // **hooks*
     const [workoutInputName, setWorkoutInputName] = useState('');
     const [workoutInputReps, setWorkoutInputReps] = useState('');
 
     return (
-        <form className="flex gap-2"
-            onSubmit={() => onAddWorkout(workoutInputName, workoutInputReps)}
+        <form className="flex gap-2 text-slate-900"
+            onSubmit={(e) => {
+                e.preventDefault();
+                onAddWorkout(workoutInputName, workoutInputReps);
+                setWorkoutInputName('');
+                setWorkoutInputReps('');
+            }}
         >
             <input
                 type="text"
