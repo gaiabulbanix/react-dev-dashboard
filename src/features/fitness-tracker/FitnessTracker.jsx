@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 export default function FitnessTracker() {
     // **hooks**
-    const [workoutList, setWorkList] = useState(() => {
+    const [workoutList, setWorkoutList] = useState(() => {
         const raw = localStorage.getItem('savedWorkouts');
         if (!raw) return [];
 
@@ -26,22 +26,22 @@ export default function FitnessTracker() {
     // **handlers**
     const handleAddWorkout = (workoutInputName, workoutInputReps) => {
         if (!workoutInputName.trim()) return;
+
+        const dateNow = new Date().toLocaleString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+        });
+
         setWorkoutList([...workoutList, {
-            id: crypto.randomUUID,
+            id: crypto.randomUUID(),
             name: workoutInputName,
             reps: workoutInputReps,
             date: dateNow
         }]);
     };
-
-    // **derived**
-    const dateNow = new Date().toLocaleString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-    });
 
     return (
         <Panel className="max-w-3xl">
@@ -49,7 +49,9 @@ export default function FitnessTracker() {
             <WorkoutForm
                 onAddWorkout={handleAddWorkout}
             />
-            <WorkoutList />
+            <WorkoutList
+                workoutList={workoutList}
+            />
         </Panel>
     );
 }
