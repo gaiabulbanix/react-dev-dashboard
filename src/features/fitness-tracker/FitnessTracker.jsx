@@ -1,6 +1,7 @@
 import Panel from '../../components/Panel';
 import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
+import Button from '../../components/Button';
 
 import { useState, useEffect } from 'react';
 
@@ -43,6 +44,13 @@ export default function FitnessTracker() {
         }]);
     };
 
+    const handleDeleteWorkout = () => {
+        if (!window.confirm("Are you sure you want to delete all workouts?")) {
+            return;
+        };
+        setWorkoutList([]);
+    }
+
     return (
         <Panel className="max-w-3xl">
             <h2>Fitness Tracker</h2>
@@ -52,6 +60,14 @@ export default function FitnessTracker() {
             <WorkoutList
                 workoutList={workoutList}
             />
+            <div className="mt-4">
+                <Button
+                    onClick={handleDeleteWorkout}
+                >
+                    Delete All Workouts
+                </Button>
+            </div>
+
         </Panel>
     );
 }
