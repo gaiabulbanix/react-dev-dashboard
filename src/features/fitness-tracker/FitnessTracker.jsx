@@ -2,7 +2,7 @@ import Panel from '../../components/Panel';
 import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function FitnessTracker() {
     // **hooks**
@@ -18,6 +18,10 @@ export default function FitnessTracker() {
             return [];
         };
     });
+
+    useEffect(() => {
+        localStorage.setItem('savedWorkouts', JSON.stringify(workoutList));
+    }, [workoutList]);
 
     return (
         <Panel className="max-w-3xl">
