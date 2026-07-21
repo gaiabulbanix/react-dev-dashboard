@@ -6,7 +6,10 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout }) {
             <div>
                 {index + 1} - {workout.name} - {workout.reps} - {workout.date}
             </div>
-            <div>
+            <div className="flex gap-1">
+                <Button>
+                    Edit
+                </Button>
                 <Button
                     onClick={() => onDeleteWorkout(workout)}
                 >
