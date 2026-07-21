@@ -1,0 +1,30 @@
+import Header from './Header';
+import TaskTracker from '../features/task-tracker/TaskTracker';
+import FitnessTracker from '../features/fitness-tracker/FitnessTracker';
+
+import { useState } from 'react';
+
+// color scheme
+// -dark mode: bg-slate-900 text-slate-100
+//  -accent: border-teal-800
+//  -surface: bg-slate-700
+
+export default function Dashboard() {
+    // **hooks**
+    const [activeFeature, setActiveFeature] = useState('taskTracker');
+
+    // **handlers**
+    const handleFeatureChange = (feature) => {
+        setActiveFeature(feature);
+    };
+
+    return (
+        <div className="min-h-screen bg-slate-900 text-slate-100">
+            <Header onFeatureChange={handleFeatureChange} activeFeature={activeFeature} />
+            <main className="p-6">
+                {activeFeature === 'taskTracker' && <TaskTracker />}
+                {activeFeature === 'fitnessTracker' && <FitnessTracker />}
+            </main>
+        </div>
+    );
+}
