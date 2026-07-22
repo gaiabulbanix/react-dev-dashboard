@@ -1,6 +1,6 @@
 import WorkoutItem from "./WorkoutItem";
 
-export default function WorkoutList({ workoutList, onDeleteWorkout }) {
+export default function WorkoutList({ workoutList, onDeleteWorkout, onEditWorkout }) {
     return (
         <ul>
             {workoutList.map((workout, index) => (
@@ -9,6 +9,7 @@ export default function WorkoutList({ workoutList, onDeleteWorkout }) {
                     index={index}
                     workout={workout}
                     onDeleteWorkout={onDeleteWorkout}
+                    onEditWorkout={onEditWorkout}
                 />
             ))}
         </ul>

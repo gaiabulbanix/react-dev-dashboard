@@ -78,6 +78,7 @@ export default function FitnessTracker() {
             <WorkoutList
                 workoutList={workoutList}
                 onDeleteWorkout={handleDeleteWorkout}
+                onEditWorkout={handleEditWorkout}
             />
             <div className="mt-4">
                 <Button
