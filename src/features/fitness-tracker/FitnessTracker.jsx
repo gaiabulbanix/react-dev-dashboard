@@ -26,7 +26,7 @@ export default function FitnessTracker() {
 
     // **handlers**
     const handleAddWorkout = (workoutInputName, workoutInputReps) => {
-        if (!workoutInputName.trim()) return;
+        if (!workoutInputName.trim() || !workoutInputReps) return;
 
         const dateNow = new Date().toLocaleString(undefined, {
             year: "numeric",

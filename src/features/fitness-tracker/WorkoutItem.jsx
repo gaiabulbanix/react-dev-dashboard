@@ -40,6 +40,7 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                             Save
                         </Button>
                         <Button
+                            type="button"
                             onClick={() => { setEditMode(false); }}
                         >
                             Cancel
@@ -52,15 +53,17 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                     </div>
                     <div className="flex gap-1">
                         <Button
+                            type="button"
                             onClick={() => {
                                 setEditMode(true);
                                 setEditInputName(workout.name);
-                                setEditWorkoutReps(workout.reps);
+                                setEditInputReps(workout.reps);
                             }}
                         >
                             Edit
                         </Button>
                         <Button
+                            type="button"
                             onClick={() => onDeleteWorkout(workout)}
                         >
                             Delete
