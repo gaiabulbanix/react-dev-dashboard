@@ -52,6 +52,16 @@ export default function FitnessTracker() {
         setWorkoutList(workoutList.filter((workout) => workout.id !== targetWorkout.id));
     };
 
+    const handleEditWorkout = (targetWorkout, workoutInputName, workoutInputReps) => {
+        if (!workoutInputName.trim() || !workoutInputReps) return;
+
+        setWorkoutList(workoutList.map((workout) =>
+            workout.id === targetWorkout.id
+                ? { ...workout, name: workoutInputName, reps: workoutInputReps }
+                : workout
+        ));
+    };
+
     const handleDeleteAllWorkout = () => {
         if (!window.confirm("Are you sure you want to delete all workouts?")) {
             return;
@@ -68,6 +78,7 @@ export default function FitnessTracker() {
             <WorkoutList
                 workoutList={workoutList}
                 onDeleteWorkout={handleDeleteWorkout}
+                onEditWorkout={handleEditWorkout}
             />
             <div className="mt-4">
                 <Button
