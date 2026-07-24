@@ -27,6 +27,7 @@ export default function WorkoutForm({ onAddWorkout }) {
             />
             <Button
                 type="submit"
+                btnSize="sm"
             >
                 Add
             </Button>
