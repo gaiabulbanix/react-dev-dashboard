@@ -26,7 +26,7 @@ export default function FitnessTracker() {
 
     // **handlers**
     const handleAddWorkout = (workoutInputName, workoutInputReps) => {
-        if (!workoutInputName.trim()) return;
+        if (!workoutInputName.trim() || !workoutInputReps) return;
 
         const dateNow = new Date().toLocaleString(undefined, {
             year: "numeric",
@@ -78,6 +78,7 @@ export default function FitnessTracker() {
             <WorkoutList
                 workoutList={workoutList}
                 onDeleteWorkout={handleDeleteWorkout}
+                onEditWorkout={handleEditWorkout}
             />
             <div className="mt-4">
                 <Button
