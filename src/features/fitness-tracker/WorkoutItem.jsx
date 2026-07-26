@@ -9,11 +9,11 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
     const [editInputReps, setEditInputReps] = useState('');
 
     return (
-        <li>
+        <li className="flex justify-between items-center mt-2">
             {editMode
                 ?
                 <form
-                    className="flex justify-between mt-2"
+                    className="flex justify-between w-full"
                     onSubmit={(e) => {
                         e.preventDefault();
                         onEditWorkout(workout, editInputName, editInputReps);
@@ -34,12 +34,14 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                     </div>
                     <div className="flex gap-1">
                         <Button
+                            btnSize="xs"
                             type="submit"
                             disabled={!editInputName.trim() || !editInputReps}
                         >
                             Save
                         </Button>
                         <Button
+                            btnSize="xs"
                             type="button"
                             onClick={() => { setEditMode(false); }}
                         >
@@ -53,6 +55,7 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                     </div>
                     <div className="flex gap-1">
                         <Button
+                            btnSize="xs"
                             type="button"
                             onClick={() => {
                                 setEditMode(true);
@@ -63,6 +66,7 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                             Edit
                         </Button>
                         <Button
+                            btnSize="xs"
                             type="button"
                             onClick={() => onDeleteWorkout(workout)}
                         >
