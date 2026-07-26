@@ -13,7 +13,7 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
             {editMode
                 ?
                 <form
-                    className="flex justify-between"
+                    className="flex justify-between w-full"
                     onSubmit={(e) => {
                         e.preventDefault();
                         onEditWorkout(workout, editInputName, editInputReps);
