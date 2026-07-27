@@ -28,6 +28,8 @@ export default function WorkoutForm({ onAddWorkout }) {
             <Button
                 type="submit"
                 btnSize="sm"
+                btnStyle="secondary"
+                disabled={!workoutInputName.trim() || !workoutInputReps}
             >
                 Add
             </Button>
