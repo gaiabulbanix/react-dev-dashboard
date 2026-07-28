@@ -80,9 +80,12 @@ export default function FitnessTracker() {
                 onDeleteWorkout={handleDeleteWorkout}
                 onEditWorkout={handleEditWorkout}
             />
-            <div className="mt-4">
+            <div className="mt-4 flex justify-end">
                 <Button
                     onClick={handleDeleteAllWorkout}
+                    btnStyle="danger"
+                    btnSize="md"
+                    disabled={workoutList.length <= 0}
                 >
                     Delete All Workouts
                 </Button>
