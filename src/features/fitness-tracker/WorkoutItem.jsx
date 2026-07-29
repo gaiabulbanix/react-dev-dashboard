@@ -9,11 +9,11 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
     const [editInputReps, setEditInputReps] = useState('');
 
     return (
-        <li className="flex justify-between items-center mt-2">
+        <li className="mt-2">
             {editMode
                 ?
                 <form
-                    className="flex justify-between w-full"
+                    className="flex justify-between"
                     onSubmit={(e) => {
                         e.preventDefault();
                         onEditWorkout(workout, editInputName, editInputReps);
@@ -49,16 +49,15 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                         </Button>
                     </div>
                 </form>
-                : <>
-                    <div className="flex justify-between w-full">
-                        <div>
-                            {index + 1} - {workout.name} - {workout.reps}
-                        </div>
-                        <div>
-                            (reps/min){workout.date}
-                        </div>
+                :
+                <div className="flex justify-between">
+                    <div className="flex items-center">
+                        {index + 1} - {workout.name} - {workout.reps}x
                     </div>
-                    <div className="flex gap-1">
+                    <div className="flex gap-1 items-center">
+                        <div className="text-slate-400 mr-1">
+                            {workout.date}
+                        </div>
                         <Button
                             btnSize="xs"
                             type="button"
@@ -79,7 +78,7 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                             Delete
                         </Button>
                     </div>
-                </>
+                </div>
             }
         </li>
     );
