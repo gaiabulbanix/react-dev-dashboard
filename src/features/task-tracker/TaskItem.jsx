@@ -12,7 +12,7 @@ export default function TaskItem({ task, index, onToggleTask, onDeleteTask, onEd
             {editMode
                 ?
                 <form
-                    className="flex justify-between"
+                    className="flex gap-1"
                     onSubmit={(e) => {
                         e.preventDefault();
                         onEditTask(task, editInput);

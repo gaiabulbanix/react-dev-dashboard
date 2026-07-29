@@ -24,12 +24,24 @@ export default function WorkoutForm({ onAddWorkout }) {
             />
             <input
                 type="number"
-                className="rounded-sm p-1 text-slate-900 w-10"
-                max="99"
+                className="rounded-sm p-1 text-slate-900 w-11"
                 min="1"
                 step="1"
                 value={workoutInputReps}
-                onChange={(e) => setWorkoutInputReps(e.target.value)}
+                onChange={(e) => {
+                    const value = e.target.value;
+
+                    if (value === "") {
+                        setWorkoutInputReps("");
+                        return;
+                    };
+
+                    const reps = Number(value);
+
+                    if (reps >= 1 && reps <= 99) {
+                        setWorkoutInputReps(reps);
+                    };
+                }}
                 placeholder="1"
             />
             <Button
