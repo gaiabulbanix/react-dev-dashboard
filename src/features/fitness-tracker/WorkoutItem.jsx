@@ -50,8 +50,13 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                     </div>
                 </form>
                 : <>
-                    <div>
-                        {index + 1} - {workout.name} - {workout.reps} - {workout.date}
+                    <div className="flex justify-between w-full">
+                        <div>
+                            {index + 1} - {workout.name} - {workout.reps}
+                        </div>
+                        <div>
+                            (reps/min){workout.date}
+                        </div>
                     </div>
                     <div className="flex gap-1">
                         <Button
@@ -69,6 +74,7 @@ export default function WorkoutItem({ workout, index, onDeleteWorkout, onEditWor
                             btnSize="xs"
                             type="button"
                             onClick={() => onDeleteWorkout(workout)}
+                            btnStyle="danger"
                         >
                             Delete
                         </Button>
