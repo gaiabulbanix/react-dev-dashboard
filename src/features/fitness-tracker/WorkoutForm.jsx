@@ -20,7 +20,7 @@ export default function WorkoutForm({ onAddWorkout }) {
                 className="rounded-sm p-1 text-slate-900"
                 value={workoutInputName}
                 onChange={(e) => setWorkoutInputName(e.target.value)}
-                placeHolder="Please add a workout..."
+                placeHolder="Add a workout here..."
             />
             <input
                 type="number"
