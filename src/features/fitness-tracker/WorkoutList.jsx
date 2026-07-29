@@ -2,7 +2,7 @@ import WorkoutItem from "./WorkoutItem";
 
 export default function WorkoutList({ workoutList, onDeleteWorkout, onEditWorkout }) {
     return (
-        <ul>
+        <ul className="mt-4">
             {workoutList.map((workout, index) => (
                 <WorkoutItem
                     key={workout.id}

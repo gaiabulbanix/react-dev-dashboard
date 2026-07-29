@@ -12,7 +12,7 @@ export default function TaskItem({ task, index, onToggleTask, onDeleteTask, onEd
             {editMode
                 ?
                 <form
-                    className="flex justify-between"
+                    className="flex gap-1"
                     onSubmit={(e) => {
                         e.preventDefault();
                         onEditTask(task, editInput);
@@ -30,7 +30,7 @@ export default function TaskItem({ task, index, onToggleTask, onDeleteTask, onEd
                             btnSize="xs"
                             type="submit"
                             btnStyle="success"
-                            disabled={!editInput.trim()}
+                            disabled={!editInput.trim() || editInput.trim() === task.name}
                         >
                             Save
                         </Button>

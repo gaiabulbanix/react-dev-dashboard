@@ -20,8 +20,7 @@ export default function TaskForm({ onAddTask }) {
                 type="text"
                 value={taskInput}
                 onChange={(e) => setTaskInput(e.target.value)}
-                placeholder="Please add a task..."
-
+                placeholder="Add a task here..."
             />
             <Button
                 type="submit"

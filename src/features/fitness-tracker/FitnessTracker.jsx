@@ -32,7 +32,7 @@ export default function FitnessTracker() {
             year: "numeric",
             month: "short",
             day: "numeric",
-            hour: "numeric",
+            hour: "2-digit",
             minute: "2-digit",
         });
 
@@ -80,9 +80,12 @@ export default function FitnessTracker() {
                 onDeleteWorkout={handleDeleteWorkout}
                 onEditWorkout={handleEditWorkout}
             />
-            <div className="mt-4">
+            <div className="mt-4 flex justify-end">
                 <Button
                     onClick={handleDeleteAllWorkout}
+                    btnStyle="danger"
+                    btnSize="md"
+                    disabled={workoutList.length <= 0}
                 >
                     Delete All Workouts
                 </Button>
